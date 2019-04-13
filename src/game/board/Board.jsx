@@ -5,18 +5,17 @@ import CheeseBox from "./boxes/cheeseBox/CheeseBox.jsx";
 import ReplayBox from "./boxes/replayBox/ReplayBox.jsx";
 import CenterBox from "./boxes/centerBox/CenterBox.jsx";
 import Pawn from "./pawn/Pawn.jsx";
-import'./board.css';
-
+import "./board.css";
 
 export default class Board extends Component {
   render() {
     return (
-      <div >
-        <Pawn/>
+      <div>
+        <Pawn />
         <NormalBox
           objet={{
             id: 27,
-            coord: [78, 67],
+            //coord: [78, 67],
             categorie: {
               nom: "Géographie",
               couleur: { nom: "Rouge", code: "#FF0000" }
@@ -26,7 +25,7 @@ export default class Board extends Component {
         <CheeseBox
           cheeseObjet={{
             id: 34,
-            coord: [11, 30],
+            //coord: [11, 30],
             categorie: {
               nom: "Histoire",
               couleur: { nom: "Noir", code: "#FFFFFF" }
@@ -36,7 +35,7 @@ export default class Board extends Component {
         <ReplayBox
           replayObjet={{
             id: 22,
-            coord: [14, 71],
+            //coord: [14, 71],
             categorie: {
               nom: "Loisir",
               couleur: { nom: "Rose", code: "#FFFFFF" }
@@ -46,7 +45,7 @@ export default class Board extends Component {
         <CenterBox
           centerObjet={{
             id: 82,
-            coord: [0, 0],
+            //coord: [0, 0],
             categorie: {
               nom: "Loisir",
               couleur: { nom: "Bleu", code: "#FFFFFF" }
@@ -57,3 +56,7 @@ export default class Board extends Component {
     );
   }
 }
+
+// TODO :
+//board math.pi en plus propre
+// cf. board.jsx du wildpursuit

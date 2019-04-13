@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Slider from "@material-ui/lab/Slider";
 import Switch from "@material-ui/core/Switch";
 import { connect } from "react-redux";
-import socketIOClient from "socket.io-client";
 
 import CreateButton from "./../../../commun/button/CreateButton.jsx";
 import WaitingForPlayers from "./../waitingForPlayers/WaitingForPlayers.jsx";
@@ -17,22 +16,12 @@ class CreateGame extends Component {
       checkedA: true,
       checkedB: false,
       checkedC: false,
-      countDown: 10,
-      socket: undefined
+      countDown: 10
     };
   }
-  componentDidMount() {
-    const socket = socketIOClient("http://localhost:5000");
-    //this.setState({ socket: socketIOClient("http://localhost:5000") });
-    // socket.on("tchoin", message => {
-    //   alert(message);
-    // });
-    socket.emit("createGame", "bite");
-  }
+
   handleSlider = (event, value) => {
-    this.setState({
-      value
-    });
+    this.setState({ value });
   };
 
   handleSwitch = name => event => {
@@ -61,24 +50,9 @@ class CreateGame extends Component {
   };
 
   handleCreateGame = (nbPLayers, countDown) => {
-    console.log(this.state.socket);
-    this.state.socket.emit("createGame", "bite");
-    alert(
-      "Nombre de joueurs de la partie : " +
-        nbPLayers +
-        "\n" +
-        "Compte à rebours avant la partie : " +
-        countDown
-    );
-    /* .addEventListener("slider", function(event) {
-      event.preventDefault();
-      socket.emit("chooseNbrPlayer", handleSlider(value));
-    }); */
     this.props.dispatch({
       type: "@popup/CHANGE",
-      payload: {
-        content: <WaitingForPlayers />
-      }
+      payload: { content: <WaitingForPlayers /> }
     });
   };
   render() {
