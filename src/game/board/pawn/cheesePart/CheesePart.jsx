@@ -8,11 +8,12 @@ export default class CheesePart extends Component {
           width: 20,
           height: 20,
           backgroundColor: "#235269",
-          border: "1px solid #235269"
+          border: "1px solid #235269",
+          borderRadius: "50%",
+          position: "absolute",
+          left: 20
         }}
-      >
-        Une Part de Camembert
-      </div>
+      />
     );
   }
 }

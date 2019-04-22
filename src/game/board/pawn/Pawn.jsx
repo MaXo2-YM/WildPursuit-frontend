@@ -9,10 +9,13 @@ export default class Pawn extends Component {
           width: 60,
           height: 60,
           backgroundColor: "#5D5D5D",
-          border: "1px solid #5D5D5D"
+          border: "1px solid #5D5D5D",
+          borderRadius: "50%",
+          position: "relative",
+          top: 250,
+          left: 250
         }}
       >
-        Un Pion
         <CheesePart />
       </div>
     );
