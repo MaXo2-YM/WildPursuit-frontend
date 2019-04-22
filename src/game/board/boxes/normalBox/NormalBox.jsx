@@ -7,20 +7,22 @@ export default class NormalBox extends Component {
   }
 
   render() {
-    const { coord, id, size, transform } = this.props;
+    const { coord, id, size, transform } = this.state;
     return (
       <div
         style={{
           position: "absolute",
-          //top: coord[1],
-          //left: coord[0],
+          top: coord[1],
+          left: coord[0],
           width: size,
           height: size,
           backgroundColor: "#C0C0C0",
           border: "1px solid #C0C0C0",
           transform
         }}
-      />
+      >
+        NormalBox
+      </div>
     );
   }
 }

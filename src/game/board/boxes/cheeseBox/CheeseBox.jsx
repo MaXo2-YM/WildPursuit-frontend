@@ -8,13 +8,13 @@ class CheeseBox extends Component {
   }
 
   render() {
-    const { coord, id, size, transform, onClick } = this.props;
+    const { coord, id, size, transform, onClick } = this.state;
     return (
       <div
         style={{
           position: "absolute",
-          //top: coord[1],
-          //left: coord[0],
+          top: coord[1],
+          left: coord[0],
           width: size,
           height: size,
           backgroundColor: "#ffa64d",
@@ -24,7 +24,9 @@ class CheeseBox extends Component {
         onClick={() => {
           onClick();
         }}
-      />
+      >
+        CheeseBox
+      </div>
     );
   }
 }
