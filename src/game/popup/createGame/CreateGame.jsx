@@ -50,6 +50,28 @@ class CreateGame extends Component {
   };
 
   handleCreateGame = (nbPLayers, countDown) => {
+    //const socket = socketIOClient("http://localhost:5000");
+    //this.setState({ socket: socketIOClient("http://localhost:5000") });
+    // socket.on("tchoin", message => {
+    //   alert(message);
+    // });
+    //socket.emit("createGame", {
+    //  nbPlayer: this.state.value,
+    //  countDown: this.state.countDown
+    //});
+    // console.log(this.state.socket);
+    // this.state.socket.emit("createGame", "bite");
+    // alert(
+    //   "Nombre de joueurs de la partie : " +
+    //     nbPLayers +
+    //     "\n" +
+    //     "Compte à rebours avant la partie : " +
+    //     countDown
+    // );
+    /* .addEventListener("slider", function(event) {
+      event.preventDefault();
+      socket.emit("chooseNbrPlayer", handleSlider(value));
+    }); */
     this.props.dispatch({
       type: "@popup/CHANGE",
       payload: { content: <WaitingForPlayers /> }

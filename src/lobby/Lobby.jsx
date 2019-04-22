@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import FlatButton from "./../commun/button/FlatButton";
 import List from "./../commun/list/List.jsx";
 import { Link } from "react-router-dom";
 
 import { generateDummyGames } from "./../App.dummyDatas.js";
 import "./lobby.css";
+
+import CreateGame from "../game/popup/createGame/CreateGame.jsx";
 
 class Lobby extends Component {
   constructor() {
@@ -59,7 +62,12 @@ class Lobby extends Component {
 
   joinGame(id) {}
 
-  createGame() {}
+  createGame() {
+    this.props.dispatch({
+      type: "@popup/OPEN",
+      payload: { content: <CreateGame /> }
+    });
+  }
 
   render() {
     return (
@@ -84,4 +92,5 @@ class Lobby extends Component {
   }
 }
 
-export default Lobby;
+//export default Lobby;
+export default connect(() => ({}))(Lobby);

@@ -23,18 +23,11 @@ class Game extends Component {
 
     this.openQuestion = this.openQuestion.bind(this);
     this.stopGame = this.stopGame.bind(this);
-    this.createGame = this.createGame.bind(this);
   }
   openQuestion() {
     this.props.dispatch({
       type: "@popup/OPEN",
       payload: { content: <Question /> }
-    });
-  }
-  createGame() {
-    this.props.dispatch({
-      type: "@popup/OPEN",
-      payload: { content: <CreateGame /> }
     });
   }
   stopGame() {
@@ -63,13 +56,6 @@ class Game extends Component {
                 this.stopGame();
               }}
               name="Arrêter la partie"
-            />
-
-            <GameButton
-              onClick={() => {
-                this.createGame();
-              }}
-              name="Créer une partie"
             />
 
             <GameButton
