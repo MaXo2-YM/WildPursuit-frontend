@@ -445,7 +445,11 @@ const zeBoard = [
     _theme: { name: "Cinéma" }
   }
 ];
-
+let composants = [];
+composants["NormalBox"] = NormalBox;
+composants["CheeseBox"] = CheeseBox;
+composants["CenterBox"] = CenterBox;
+composants["ReplayBox"] = ReplayBox;
 export default class Board extends Component {
   render() {
     return (
@@ -503,6 +507,12 @@ export default class Board extends Component {
             size: 50
           }}
         />
+        {zeBoard.map(box => {
+          let { coord: _coord, ...rest } = box;
+          let C = composants[box._type];
+          console.log(C);
+          return <C {coord} />;
+        })}
       </div>
     );
   }
